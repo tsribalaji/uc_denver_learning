@@ -1,0 +1,5 @@
+Please download the weights and paste in this folder in same name. 
+
+Weights - https://drive.google.com/file/d/10dY121_84Pc8D_AK2ek5p5ksEfPBu8to/view?usp=sharing
+
+While Training the siamese network, model weights will be stored here.

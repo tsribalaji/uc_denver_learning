@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Similarity</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="{{ url_for('static', filename='asserts/custom.js') }}"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Document Classification - Siamese Network </h1>
+  <!-- <p>Siamese Network</p>  -->
+</div>
+  
+<div class="container">
+  <!-- <div class="row">
+    <div class=""col-6"">
+      <p>Train model your here with the defaults</p>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-primary">Train</button>
+    </div>
+  </div> -->
+
+  <div class="row">
+
+  <div class="input-group">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
+        <label id='fileLbl' class="custom-file-label" for="inputGroupFile04">Choose file</label>
+      </div>
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="Search"  >Search</button>
+      </div>
+    </div>
+
+  </div>
+  <br/>
+  <br/>
+  <div class="row">
+    <div class="col-sm-4">
+      <h3 id='original_name'>Input</h3>
+      <img id="original"  alt="" class="img-thumbnail"> <!--src= "{{ url_for('static', filename='asserts/ue88p.jpg') }}"-->
+      <br/>
+      <br/>
+    </div>
+    <div class="col-sm-4">
+      <h3 id='first_name'>Match</h3>
+    </div>
+    <div class="col-sm-4">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
