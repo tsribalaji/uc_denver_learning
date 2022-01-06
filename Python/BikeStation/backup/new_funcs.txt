@@ -1,0 +1,52 @@
+ def plot_available_bikes_over_time(self):
+        """
+        Create a scatter plot of the number of bikes available or docks in service for each BikeStation over time.
+        :return:
+        """
+
+        fig = plt.figure()
+        ax = fig.add_subplot(111)
+        from pandas.plotting import register_matplotlib_converters
+        self.bike_df['id_int'] = pd.to_numeric(self.bike_df['id'])
+
+        """unique_ids = self.bike_df.id.unique()
+        color_array = ['red', 'blue', 'green', 'black', 'yellow']
+        for i, val in enumerate(unique_ids):
+            new_df = self.bike_df.loc[self.bike_df['id'] == val]
+            ax.plot_date(x=self.bike_df['date'], y=self.bike_df['available_bikes'], hue=color_array[i], xdate=True,
+                            ydate=False)"""
+
+        print(self.bike_df.timestamp.values)
+
+        x = self.bike_df['timestamp']
+        y = self.bike_df['available_bikes']
+
+        x_numbers = list(pd.to_timedelta(self.bike_df['timestamp'], errors="coerce").dt.total_seconds())
+        plt.scatter(x_numbers, y, c=self.bike_df.id.values)
+
+        #plt.show()
+
+       # ax.scatter(x=self.bike_df.timestamp.values,  y='available_bikes', c='id_int', colormap='viridis')
+        # self.bike_df.plot.scatter(x='date', y='available_bikes', c='id_int', colormap='viridis')
+
+        plt.tight_layout()
+        plt.xticks(rotation=25)
+        # self.bike_df.plot.bar()
+
+        plt.title('Plot 4 - Scatter Plot chart showing no. of bikes available over time')
+        plt.xlabel('Time (in Date)')  # Scale used is dates
+        plt.ylabel('No. of bikes available')
+
+        # Save the figure and show the chart
+        plt.savefig('Plot 4.png')
+        plt.show()
+
+    def scatter_date(self, df, x, y, datetimeformat):
+        if not isinstance(y, list):
+            y = [y]
+        for yi in y:
+            plt.plot_date(df[x].apply(
+                lambda z: matplotlib.dates.date2num(
+                    datetime.datetime.strptime(z, datetimeformat))), df[yi], label=yi)
+        plt.legend()
+        plt.xlabel(x)

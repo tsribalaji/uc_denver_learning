@@ -1,0 +1,66 @@
+
+# def main():
+#
+#     sql_client = SQLClient()
+#     bike_stations = sql_client.get_bike_stations()
+#
+#     analysis = Analysis(bike_stations)
+#     analysis.print_stats()
+#
+#     # Step 2: Statistical Analysis - calculating at least 2 statistics for each bike station
+#
+#     # Step 3: Generating plots using Pandas DataFrame,
+#     # from Pandas Series from the DataFrame for each column in the data frame,
+#     # and those series being used just like a list in matplotlib.pyplot.
+#
+#     # Plot 1
+#     # Create a bar chart showing the average bikes and/or docks available by bike station
+#     # Made directly from the Pandas DataFrame
+#     bike_df_avg = bike_df.groupby(['id'])['available_docks'].mean()
+#     plt.title('Plot 1 - Bar chart showing Average docks available by bike station')
+#     plt.xlabel('Bike station id')
+#     plt.ylabel('Avg. docks available')
+#     bike_df_avg.plot.bar()
+#
+#     # Save the figure and show the chart
+#     plt.show()
+#     plt.savefig("Plot 1")
+#
+#     # Plot 2
+#     # Create a bar chart showing the average bikes and/or docks available by day of the week (Monday, Tuesday ...).
+#     # Converting the timestamp to a datetime to create a new column in Data frame for day associated with each reading
+#     ordered_days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+#     bike_df_avg_by_day = bike_df.groupby(['day_of_week'])['available_docks'].mean().reindex(ordered_days)
+#
+#     # In case of avg. docks by day by ID
+#     # bike_df_avg_by_day = pd.pivot_table(bike_df, values=['available_bikes'],
+#     #                       columns=['day_of_week'], index=['id'], aggfunc=np.mean)
+#
+#     # bike_df_avg_by_day["available_bikes"].plot()
+#     bike_df_avg_by_day.plot.bar()
+#
+#     plt.title('Plot 2 - Bar chart showing Average docks available by day_of_week')
+#     plt.xlabel('Day of week')
+#     plt.ylabel('Avg. docks available')
+#
+#     # Save the figure and show the chart
+#
+#     plt.savefig('Plot 2.png')
+#     plt.show()
+#
+#     # Plot 3
+#     # Calculate the average bikes available by day for each BikeStation
+#     # Create a line plot showing the changer over time.
+#     bike_df_avg_by_day = pd.pivot_table(bike_df, values=['available_bikes'], columns=['id'], index=['date'],
+#                                         aggfunc=np.mean)
+#
+#     print(bike_df_avg_by_day.columns)
+#
+#     bike_df_avg_by_day["available_bikes"].plot()  # default is 'line' - line plot
+#     plt.title('Plot 3 - Line Plot chart showing Average bikes available available by time')
+#     plt.xlabel('Time (in Date)')  # Scale used is dates
+#     plt.ylabel('Avg. bikes available')
+#
+#     # Save the figure and show the chart
+#     plt.savefig('Plot 3.png')
+#     plt.show()

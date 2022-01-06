@@ -1,0 +1,15 @@
+1. Add 2 reference
+2. Downtime Chart under problem statement
+3. Solution inline refernce 
+4. Expand pricing 
+5. Advantages of cloud computing - data securities and resiliency 
+6. Clearly identifies 3 or More Legal and/or Regulatory Compliance Issues This Company Faces when Dealing with Sensitive Data in Various Countries and Online
+	- Employee Data
+		Over the last few years, states have been enacting laws—including the CCPA—to protect the privacy of employee information and data. Even in states without these laws, employees have been successfully suing their employers for data privacy breaches using laws like the CCPA as precedent. You can expect to see more employee privacy lawsuits and regulations in the future, so you should be working now to implement security and privacy measures when processing employee personal data.
+
+ Compliance is a Shared Responsibility
+
+Security and Compliance is a shared responsibility between AWS and the customer. This shared model can help relieve the customer’s operational burden as AWS operates, manages and controls the components from the host operating system and virtualization layer down to the physical security of the facilities in which the service operates. The customer assumes responsibility and management of the guest operating system (including updates and security patches), other associated application software as well as the configuration of the AWS provided security group firewall.
+
+https://aws.amazon.com/compliance/
+https://aws.amazon.com/compliance/data-privacy-faq/
